@@ -1,65 +1,63 @@
 package com.opencart.base;
 
-import java.time.Duration;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
 
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.BeforeTest;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
-import com.opencart.utils.ReadConfig;
+public class BaseTest {
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+	static String url = "https://automationexercise.com/";
+	static WebDriver driver;
 
-public class BaseTest extends ReadConfig {
-
-	public BaseTest() throws Exception {
-		super();
-	}
-
-	public static WebDriver driver;
-
-	@BeforeTest
-	public static void browserLauch() throws Exception {
-
-		ReadConfig config1 = new ReadConfig();
-
-		// get the browser value using the getProperty
-		System.out
-				.println(config1.prop1
-						.getProperty("browser"));
-		System.out
-				.println(config1.prop1
-						.getProperty("url"));
-
-		// 1. Setup the options FIRST
+	@BeforeMethod
+	public void browserLaunch() throws MalformedURLException, URISyntaxException {
+		// Instantiate the chrome options
 		ChromeOptions options = new ChromeOptions();
-
-		// For the 403 Forbidden error
+		// add the headless argument to the options
 		options
-				.addArguments("--remote-allow-origins=*");
-
-		WebDriverManager
-				.chromedriver()
-				.clearDriverCache()
-				.setup();
-		driver = new ChromeDriver(options);
-		// driver
-		// .get("https://www.google.com/");
-
+				.addArguments("headless", "--remote-allow-origins=*");
+		// set the platform independent arguments in the setCapability
+		options
+				.setCapability("platformName", Platform.ANY);
+		// Instantiate the remotewebdriver
+		driver = new RemoteWebDriver(new URI("http://localhost:4444/wd/hub")
+				.toURL(), options);
+		// manage the resolution of the window
 		driver
 				.manage()
 				.window()
 				.maximize();
+		// Launch the url
 		driver
-				.manage()
-				.timeouts()
-				.implicitlyWait(Duration
-						.ofSeconds(10));
-		driver
-				.get(config1.prop1
-						.getProperty("url"));
+				.navigate()
+				.to(url);
+	}
 
+	@Test
+	public void getTitle() {
+		// get the title of the homepage
+		String title = driver
+				.getTitle();
+		System.out
+				.println(title);
+		System.out
+				.println("And it worked!!!!");
+	}
+
+	@AfterMethod
+	public void browserClose() {
+		if (driver != null) {
+			driver
+					.quit();
+		}
 	}
 
 }

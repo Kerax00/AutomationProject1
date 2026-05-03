@@ -5,7 +5,9 @@
     <classes>
       <class name="com.opencart.base.BaseTest">
         <methods>
-          <include name="browserLauch"/>
+          <include name="browserClose"/>
+          <include name="getTitle"/>
+          <include name="browserLaunch"/>
         </methods>
       </class> <!-- com.opencart.base.BaseTest -->
     </classes>
