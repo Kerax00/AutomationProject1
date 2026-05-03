@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-05-03T11:29:14 IST" name="Default suite" finished-at="2026-05-03T11:29:18 IST" duration-ms="3886">
+  <suite started-at="2026-05-03T15:58:48 IST" name="Suite" finished-at="2026-05-03T15:58:52 IST" duration-ms="4566">
     <groups>
     </groups>
-    <test started-at="2026-05-03T11:29:14 IST" name="Default test" finished-at="2026-05-03T11:29:18 IST" duration-ms="3886">
+    <test started-at="2026-05-03T15:58:48 IST" name="Test" finished-at="2026-05-03T15:58:52 IST" duration-ms="4566">
       <class name="com.opencart.base.BaseTest">
-        <test-method is-config="true" signature="browserLaunch()[pri:0, instance:com.opencart.base.BaseTest@5bfa8cc5]" started-at="2026-05-03T11:29:14 IST" name="browserLaunch" finished-at="2026-05-03T11:29:18 IST" duration-ms="3696" status="PASS">
+        <test-method is-config="true" signature="browserLaunch()[pri:0, instance:com.opencart.base.BaseTest@5bfa8cc5]" started-at="2026-05-03T15:58:48 IST" name="browserLaunch" finished-at="2026-05-03T15:58:52 IST" duration-ms="4378" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserLaunch -->
-        <test-method signature="getTitle()[pri:0, instance:com.opencart.base.BaseTest@5bfa8cc5]" started-at="2026-05-03T11:29:18 IST" name="getTitle" finished-at="2026-05-03T11:29:18 IST" duration-ms="31" status="PASS">
+        <test-method signature="getTitle()[pri:0, instance:com.opencart.base.BaseTest@5bfa8cc5]" started-at="2026-05-03T15:58:52 IST" name="getTitle" finished-at="2026-05-03T15:58:52 IST" duration-ms="29" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getTitle -->
-        <test-method is-config="true" signature="browserClose()[pri:0, instance:com.opencart.base.BaseTest@5bfa8cc5]" started-at="2026-05-03T11:29:18 IST" name="browserClose" finished-at="2026-05-03T11:29:18 IST" duration-ms="87" status="PASS">
+        <test-method is-config="true" signature="browserClose()[pri:0, instance:com.opencart.base.BaseTest@5bfa8cc5]" started-at="2026-05-03T15:58:52 IST" name="browserClose" finished-at="2026-05-03T15:58:52 IST" duration-ms="84" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserClose -->
       </class> <!-- com.opencart.base.BaseTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
